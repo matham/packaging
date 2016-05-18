@@ -6,7 +6,7 @@ function Check-Error
   }
 }
 
-if $(env:APPVEYOR_REPO_BRANCH -eq "master" -and -not $env:APPVEYOR_PULL_REQUEST_NUMBER) {
+if ($env:APPVEYOR_REPO_BRANCH -eq "master" -and -not $env:APPVEYOR_PULL_REQUEST_NUMBER) {
   cd "$env:APPVEYOR_BUILD_FOLDER"
   python -m pip install sphinx
   Check-Error
