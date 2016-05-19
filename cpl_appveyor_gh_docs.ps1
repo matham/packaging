@@ -13,6 +13,8 @@ if ($env:APPVEYOR_REPO_BRANCH -eq "master" -and -not $env:APPVEYOR_PULL_REQUEST_
   cd doc
   ./make.bat html
   Check-Error
+  ./make.bat html
+  Check-Error
   cd ..
   mkdir "C:\docs_temp"
   Copy-Item "doc\build\html\*" "C:\docs_temp" -recurse
